@@ -1,0 +1,6 @@
+.navbar-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border: 2px solid rosybrown;
+}

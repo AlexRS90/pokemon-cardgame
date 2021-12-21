@@ -1,0 +1,35 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card-wrapper {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-wrapper p {
+  margin-bottom: 0;
+  margin-top: 5px;
+  padding-left: 9px;
+}
+
+.card-wrapper:nth-child(odd) {
+  background-color: thistle;
+}
+
+.card-wrapper:nth-child(even) {
+    background-color: violet;
+  }
+
+.poke-card {
+  width: 175px;
+  height: 100px;
+  object-fit: cover;
+  object-position: 0 -20px;
+  border-radius: 10%;
+  align-self: center;
+  padding-top: 15px;
+}
