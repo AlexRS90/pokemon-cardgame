@@ -1,25 +1,34 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import filterPokemon from '../redux/pokemon/actionsCreator';
 import './navbar.css';
 
-const Navbar = () => (
-  <div className="navbar-wrapper">
-    <p><strong>Back</strong></p>
-    <p>Filter by Pokemon type</p>
-    <select>
-      <option>All</option>
-      <option>Colorless</option>
-      <option>Darkness</option>
-      <option>Dragon</option>
-      <option>Fairy</option>
-      <option>Fighting</option>
-      <option>Fire</option>
-      <option>Grass</option>
-      <option>Lightning</option>
-      <option>Metal</option>
-      <option>Psychic</option>
-      <option>Water</option>
-    </select>
-  </div>
-);
+const Navbar = ({ name }) => {
+  const dispatch = useDispatch();
+  return (
+    <div className="navbar-wrapper">
+      <Link to="/">
+        <p className={`${name ? 'visible' : 'hidden'} back-button`}><strong>&lt;</strong></p>
+      </Link>
+      <p>{(name) ? name : 'Filter by Type'}</p>
+      <select className={`${name ? 'hidden' : 'visible'} list-style`}
+        id="pokemonType" onChange={() =>
+        dispatch(filterPokemon(document.getElementById('pokemonType').value))}>
+        <option value="All">All</option>
+        <option value="Colorless">Colorless</option>
+        <option value="Darkness">Darkness</option>
+        <option value="Dragon">Dragon</option>
+        <option value="Fighting">Fighting</option>
+        <option value="Fire">Fire</option>
+        <option value="Grass">Grass</option>
+        <option value="Lightning">Lightning</option>
+        <option value="Metal">Metal</option>
+        <option value="Psychic">Psychic</option>
+        <option value="Water">Water</option>
+      </select>
+    </div>
+  );
+};
 
 export default Navbar;
