@@ -2,15 +2,49 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { getPokemon } from "../redux/pokemon/actionsCreator";
+import Navbar from "./navbar";
 import './homePageBottom.css';
+import All from './assets/All.png';
+import Colorless from './assets/colorless.png';
+import Darkness from './assets/Darkness.png';
+import Dragon from './assets/Dragon.png';
+import Fighting from './assets/Fighting.png';
+import Fire from './assets/Fire.png';
+import Grass from './assets/Grass.png';
+import Lightning from './assets/Lightining.png';
+import Metal from './assets/Metal.png';
+import Psychic from './assets/Psychic.png';
+import Water from './assets/Water.png';
 
 const ShowPokemon = () => {
   const dispatch = useDispatch();
   const pokemon = useSelector((state) => state);
   useEffect(() => {
-    if(pokemon.length === 0) dispatch(getPokemon());
+    dispatch(getPokemon());
   }, []);
-  return ( 
+  let numberOfPokemon = pokemon.length;
+  let pokemonType = 'All';
+  if (numberOfPokemon < 250) pokemonType = pokemon[0].type;
+  return (
+    <>
+      <Navbar />
+      <div className="pokemon-wrapper">
+        {
+          (pokemonType === 'Water' ? <img src={Water} width="120" alt="Pokemon type" />
+          : pokemonType === 'Psychic' ? <img src={Psychic} width="120" alt="Pokemon type" />
+          : pokemonType === 'Metal' ? <img src={Metal} width="120" alt="Pokemon type" />
+          : pokemonType === 'Lightning' ? <img src={Lightning} width="120" alt="Pokemon type" />
+          : pokemonType === 'Grass' ? <img src={Grass} width="120" alt="Pokemon type" />
+          : pokemonType === 'Fire' ? <img src={Fire} width="120" alt="Pokemon type" />
+          : pokemonType === 'Fighting' ? <img src={Fighting} width="120" alt="Pokemon type" />
+          : pokemonType === 'Dragon' ? <img src={Dragon} width="120" alt="Pokemon type" />
+          : pokemonType === 'Darkness' ? <img src={Darkness} width="120" alt="Pokemon type" />
+          : pokemonType === 'Colorless' ? <img src={Colorless} width="120" alt="Pokemon type" />
+          : <img src={All} width="200" alt="Pokemon type" />)
+        }
+        <p>{numberOfPokemon}<br />Pokemon<br />Cards</p>
+      </div>
+        <p className="middle-bar">Pokemon type: {(numberOfPokemon!==250) ? pokemonType : 'All'}</p>
       <div className="card-container">
         {pokemon.map((data) => (
             <div key={data.id} className="card-wrapper">
@@ -29,10 +63,11 @@ const ShowPokemon = () => {
                 <img src={data.image} alt="pokemon" className="poke-card" />
               </NavLink>
               <p>{data.name}</p>
-              <p>Pokedex No: {data.pokedex}</p>
+              <p className="poke-number">Pokedex No: {data.pokedex}</p>
             </div> 
         ))}
       </div>
+    </>
   );
 };
 
