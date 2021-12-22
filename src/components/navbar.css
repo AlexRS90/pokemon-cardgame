@@ -1,6 +1,41 @@
 .navbar-wrapper {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  border: 2px solid rosybrown;
+  height: 10vh;
+  align-items: center;
+  padding: 0 5px;
+  background-color: #35589a;
+}
+
+.navbar-wrapper p{
+  margin: 0;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.back-button {
+  color: aliceblue;
+  padding-left: 1rem;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+.list-style {
+  border: none;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  background-color: #6882c6;
+  border-radius: 10px;
+  width: 25vh;
+  padding: 5px;
 }
