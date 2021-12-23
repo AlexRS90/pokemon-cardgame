@@ -15,8 +15,7 @@ const Navbar = ({ name }) => {
       <p>{(!name) ? 'Filter by Type' : name}</p>
       <select
         className={`${name ? 'hidden' : 'visible'} list-style`}
-        id="pokemonType"
-        onChange={() => dispatch(filterPokemon(document.getElementById('pokemonType').value))}
+        onChange={(e) => dispatch(filterPokemon(e.currentTarget.value))}
       >
         <option value="All">All</option>
         <option value="Colorless">Colorless</option>
