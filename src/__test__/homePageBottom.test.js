@@ -1,4 +1,4 @@
-import { render, screen, cleanup } from '@testing-library/react';
+import { render, cleanup } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import * as pokemonAction from '../redux/pokemon/actionsCreator';
@@ -20,7 +20,6 @@ describe('Render components to the DOM', () => {
         </Provider>
       </BrowserRouter>,
     );
-    screen.debug();
   });
 
   test('Render ShowPokemon component', () => {
@@ -33,14 +32,13 @@ describe('Render components to the DOM', () => {
         </Provider>
       </BrowserRouter>,
     );
-    screen.debug();
   });
 
   test('Render Detail Component', () => {
     const data = {//eslint-disable-line
-      pokedex: 181,
       name: 'Ampharos',
       id: 'pl1-1',
+      pokedex: 181,
       hp: '180',
       type: 'Lightning',
       attack: [{
@@ -57,9 +55,9 @@ describe('Render components to the DOM', () => {
         <Provider store={store}>
           <DetailInfo data={
             {
-              pokedex: 181,
               name: 'Ampharos',
               id: 'pl1-1',
+              pokedex: 181,
               hp: '180',
               type: 'Lightning',
               attack: [{
@@ -76,7 +74,6 @@ describe('Render components to the DOM', () => {
         </Provider>
       </BrowserRouter>,
     );
-    screen.debug();
   });
 });
 
@@ -103,9 +100,9 @@ describe('Test Action creators', () => {
     expect(action).toEqual({
       type: 'FETCH_SUCCES',
       payload: [{
-        pokedex: 181,
-        name: 'Ampharos',
         id: 'pl1-1',
+        name: 'Ampharos',
+        pokedex: 181,
         hp: '180',
         type: 'Lightning',
         attack: [{
