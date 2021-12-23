@@ -1,7 +1,7 @@
 import { render, screen, cleanup } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import * as pokemonAction from '../redux/pokemon/actionsCreator';
 import { Provider } from 'react-redux';
+import * as pokemonAction from '../redux/pokemon/actionsCreator';
 import store from '../redux/configStore';
 import ShowPokemon from '../components/homePageBottom';
 import DetailInfo from '../components/details';
@@ -37,20 +37,20 @@ describe('Render components to the DOM', () => {
   });
 
   test('Render Detail Component', () => {
-    const data = {
+    const data = {//eslint-disable-line
       pokedex: 181,
       name: 'Ampharos',
       id: 'pl1-1',
       hp: '180',
       type: 'Lightning',
       attack: [{
-        name: 'Gigavolt'
+        name: 'Gigavolt',
       }],
       rarity: 'Rare Holo',
       image: 'https://images.pokemontcg.io/pl1/1.png',
       price: {
         averageSellPrice: 2.69,
-      },  
+      },
     };
     render(
       <BrowserRouter>
@@ -63,15 +63,16 @@ describe('Render components to the DOM', () => {
               hp: '180',
               type: 'Lightning',
               attack: [{
-                name: 'Gigavolt'
+                name: 'Gigavolt',
               }],
               rarity: 'Rare Holo',
               image: 'https://images.pokemontcg.io/pl1/1.png',
               price: {
                 averageSellPrice: 2.69,
-              },  
+              },
             }
-          } />
+          }
+          />
         </Provider>
       </BrowserRouter>,
     );
@@ -84,10 +85,10 @@ describe('Test Action creators', () => {
     const succes = [{
       id: 'pl1-1',
       name: 'Ampharos',
-      nationalPokedexNumbers: [181,87],
+      nationalPokedexNumbers: [181, 87],
       hp: '180',
       types: ['Lightning'],
-      attacks: [{name: 'Gigavolt'}],
+      attacks: [{ name: 'Gigavolt' }],
       rarity: 'Rare Holo',
       images: {
         small: 'https://images.pokemontcg.io/pl1/1.png',
@@ -95,24 +96,28 @@ describe('Test Action creators', () => {
       cardmarket: {
         prices: {
           averageSellPrice: 2.69,
-      }},
+        },
+      },
     }];
     const action = pokemonAction.succesPokemon(succes);
-    expect(action).toEqual({ type: 'FETCH_SUCCES', payload: [{ 
-      pokedex: 181,
-      name: 'Ampharos',
-      id: 'pl1-1',
-      hp: '180',
-      type: 'Lightning',
-      attack: [{
-        name: 'Gigavolt'
+    expect(action).toEqual({
+      type: 'FETCH_SUCCES',
+      payload: [{
+        pokedex: 181,
+        name: 'Ampharos',
+        id: 'pl1-1',
+        hp: '180',
+        type: 'Lightning',
+        attack: [{
+          name: 'Gigavolt',
+        }],
+        rarity: 'Rare Holo',
+        image: 'https://images.pokemontcg.io/pl1/1.png',
+        price: {
+          averageSellPrice: 2.69,
+        },
       }],
-      rarity: 'Rare Holo',
-      image: 'https://images.pokemontcg.io/pl1/1.png',
-      price: {
-        averageSellPrice: 2.69,
-      },
-    }]});
+    });
   });
 
   test('Filter according to a type', () => {
