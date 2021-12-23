@@ -1,9 +1,9 @@
 import axios from 'axios';
-import { FETCH_SUCCES, FETCH_FAILURE, POKEMON_TYPE } from "./actionsType";
+import { FETCH_SUCCES, POKEMON_TYPE } from "./actionsType";
 
 const url = 'https://api.pokemontcg.io/v2/cards/';
 
-const succesPokemon = (pokedex) => {
+export const succesPokemon = (pokedex) => {
   console.log(pokedex);
   const payload = pokedex.map((e) => (
     {
@@ -32,12 +32,7 @@ export const getPokemon = () => (dispatch) => {
   });
 };
 
-const failurePokemon = (error) => ({
-  type: FETCH_FAILURE,
-  payload: error,
-});
-
-const chooseType = (pokemonType) => ({
+export const chooseType = (pokemonType) => ({
   type: POKEMON_TYPE,
   payload: pokemonType,
 });

@@ -1,3 +1,2 @@
 export const FETCH_SUCCES = 'FETCH_SUCCES';
-export const FETCH_FAILURE = 'FETCH_FAILURE';
 export const POKEMON_TYPE = 'POKEMON_TYPE'

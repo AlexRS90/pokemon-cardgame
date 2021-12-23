@@ -1,12 +1,14 @@
 import React from 'react';
-import Navbar from './navbar';
+import PropTypes from 'prop-types';
 import './detail.css';
+import Navbar from './navbar';
 
-const DetailInfo = (props) => {
-    const { id, name, pokedex, hp, type, attack, rarity, image, price } = props.data;
-    return (
-      <div key={id}>
-        <Navbar name={name} />
+const DetailInfo = ({ data }) => {
+  const { name, id, pokedex, hp, type, attack, rarity, image, price } = data;
+  return (
+    <div key={id}>
+      <Navbar name={name} />
+      <div data-testid="testingDetail">
         <section className="top-container">
           <div className="top-wrapper">
             <img src={image} alt="Pokemon" />
@@ -25,7 +27,7 @@ const DetailInfo = (props) => {
           <div className="attack-wrapper bg-color">
             <p className="title-table">List of Attacks</p>
             {attack.map((e) => (
-              <div className="d-flex">
+              <div key={e.name} className="d-flex">
                 <p>Attack</p>
                 <p>{e.name}</p>
               </div>
@@ -51,8 +53,30 @@ const DetailInfo = (props) => {
           </div>
         </section>
       </div>
-    );
+    </div>
+  );
+};
 
+DetailInfo.propTypes = {
+  props: PropTypes.object.isRequired,
+};
+
+DetailInfo.defaultProps = {
+  props: { data: {
+    id: '7263ds',
+    name: 'Pikachu',
+    pokedex: 26,
+    hp: 300,
+    type: 'lightining',
+    attack: [{
+      name: 'thunderbold',
+    }],
+    rarity: 'common',
+    image: './assets/notfound.png',
+    price: {
+      average: 20,
+    }
+  },},
 };
 
 export default DetailInfo;

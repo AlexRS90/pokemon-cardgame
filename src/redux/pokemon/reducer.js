@@ -1,7 +1,8 @@
-import { FETCH_FAILURE, FETCH_SUCCES, POKEMON_TYPE } from "./actionsType";
+import { FETCH_SUCCES, POKEMON_TYPE } from "./actionsType";
 
 const initialState = [{
   type: 'All',
+  id: 'pl1-1',
 }];
 let cacheState = [];
 
@@ -10,8 +11,6 @@ const pokemonReducer = (state = initialState, action) => {
     case FETCH_SUCCES:
       cacheState=action.payload;
       return action.payload;
-    case FETCH_FAILURE:
-      return state;
     case POKEMON_TYPE:
       return (cacheState.filter((pokemon) => pokemon.type === action.payload));
     default:

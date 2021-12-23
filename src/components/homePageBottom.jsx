@@ -28,7 +28,7 @@ const ShowPokemon = () => {
   return (
     <>
       <Navbar />
-      <div className="pokemon-wrapper">
+      <div className="pokemon-wrapper" data-testid="testing">
         {
           (pokemonType === 'Water' ? <img src={Water} width="120" alt="Pokemon type" />
           : pokemonType === 'Psychic' ? <img src={Psychic} width="120" alt="Pokemon type" />
@@ -44,7 +44,7 @@ const ShowPokemon = () => {
         }
         <p>{numberOfPokemon}<br />Pokemon<br />Cards</p>
       </div>
-        <p className="middle-bar">Pokemon type: {(numberOfPokemon!==250) ? pokemonType : 'All'}</p>
+      <p className="middle-bar">Pokemon type: {(numberOfPokemon!==250) ? pokemonType : 'All'}</p>
       <div className="card-container">
         {pokemon.map((data) => (
             <div key={data.id} className="card-wrapper">
