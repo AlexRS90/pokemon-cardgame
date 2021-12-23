@@ -97,20 +97,19 @@ DetailInfo.propTypes = {
 };
 
 DetailInfo.defaultProps = {
-  data: {
-    id: '7263ds',
-    name: 'Pikachu',
-    pokedex: 26,
-    hp: '300',
-    type: 'lightining',
-    attack: [{
-      name: 'thunderbold',
-    }],
-    rarity: 'common',
-    image: './assets/notfound.png',
-    price: {
-      average: 20,
-    },
+  data: {},
+  id: '7263ds',
+  name: 'Pikachu',
+  pokedex: 26,
+  hp: '300',
+  type: 'lightining',
+  attack: [{
+    name: 'thunderbold',
+  }],
+  rarity: 'common',
+  image: './assets/notfound.png',
+  price: {
+    average: 20,
   },
 };
 
