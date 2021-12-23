@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { checkPropTypes } from 'prop-types';
 import './detail.css';
 import Navbar from './navbar';
 
@@ -83,18 +83,7 @@ const DetailInfo = ({ data }) => {
   );
 };
 
-DetailInfo.propTypes = {
-  data: PropTypes.objectOf(PropTypes.object()),
-  name: PropTypes.string,
-  id: PropTypes.string,
-  pokedex: PropTypes.number,
-  hp: PropTypes.string,
-  type: PropTypes.string,
-  attack: PropTypes.arrayOf(PropTypes.array()),
-  rarity: PropTypes.string,
-  image: PropTypes.string,
-  price: PropTypes.objectOf(PropTypes.object()),
-};
+checkPropTypes(DetailInfo.propTypes, {data: {}}, 'prop', DetailInfo.data);
 
 DetailInfo.defaultProps = {
   data: {},
