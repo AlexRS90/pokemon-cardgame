@@ -4,8 +4,8 @@
 
 > Browse throw 250 pokemon cards and get info like attacks, number of pokedex, value of the cards and pokemon type.
 
-![screenshot](ssHomePage.jpg)
-![screenshot](ssDetailPage.jpg)
+![screenshot](ssHomePage.jpg | width=300)
+![screenshot](ssDetailPage.jpg | width=300)
 
 ### Milestone 1:
 - Followed Gitflow
