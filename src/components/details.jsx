@@ -5,15 +5,15 @@ import Navbar from './navbar';
 
 const DetailInfo = ({ data }) => {
   const {
-      name,
-      id,
-      pokedex,
-      hp,
-      type,
-      attack,
-      rarity,
-      image,
-      price,
+    name,
+    id,
+    pokedex,
+    hp,
+    type,
+    attack,
+    rarity,
+    image,
+    price,
   } = data;
   return (
     <div key={id}>
@@ -31,8 +31,8 @@ const DetailInfo = ({ data }) => {
             </div>
           </div>
           <p className="middle-bar">
-              Hit Power:
-              {hp}
+            Hit Power:
+            {hp}
           </p>
         </section>
         <section className="details-container">
@@ -58,21 +58,21 @@ const DetailInfo = ({ data }) => {
             <div className="d-flex">
               <p>Average</p>
               <p>
-                $ 
+                $
                 {price.averageSellPrice}
               </p>
             </div>
             <div className="d-flex">
               <p>Lowest</p>
               <p>
-                $ 
+                $
                 {price.lowPrice}
               </p>
             </div>
             <div className="d-flex">
               <p>Trend</p>
               <p>
-                $ 
+                $
                 {price.trendPrice}
               </p>
             </div>
@@ -103,9 +103,9 @@ DetailInfo.defaultProps = {
     pokedex: 26,
     hp: 300,
     type: 'lightining',
-    attack: [ {
+    attack: [{
       name: 'thunderbold',
-    } ],
+    }],
     rarity: 'common',
     image: './assets/notfound.png',
     price: {

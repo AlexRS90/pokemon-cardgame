@@ -51,12 +51,13 @@ const ShowPokemon = () => {
         </p>
       </div>
       <p className="middle-bar">
-        Pokemon type: 
-        {(numberOfPokemon < 250) ? pokemonType : 'All'}</p>
+        Pokemon type:
+        {(numberOfPokemon < 250) ? pokemonType : 'All'}
+      </p>
       <div className="card-container">
         {pokemon.map((data) => (
           <div key={data.id} className="card-wrapper">
-            <NavLink 
+            <NavLink
               to={`/detail/${data.id}`}
               state={{
                 id: data.id,
@@ -74,7 +75,7 @@ const ShowPokemon = () => {
             </NavLink>
             <p>{data.name}</p>
             <p className="poke-number">
-              Pokedex No: 
+              Pokedex No:
               {data.pokedex}
             </p>
           </div>

@@ -17,7 +17,7 @@ const Navbar = ({ name }) => {
         className={`${name ? 'hidden' : 'visible'} list-style`}
         id="pokemonType"
         onChange={() => dispatch(filterPokemon(document.getElementById('pokemonType').value))}
-       >
+      >
         <option value="All">All</option>
         <option value="Colorless">Colorless</option>
         <option value="Darkness">Darkness</option>
@@ -36,6 +36,10 @@ const Navbar = ({ name }) => {
 
 Navbar.propTypes = {
   name: PropTypes.string,
+};
+
+Navbar.defaultProps = {
+  name: 'Ampharos'
 };
 
 export default Navbar;
