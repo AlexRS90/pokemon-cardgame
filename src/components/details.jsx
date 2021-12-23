@@ -4,7 +4,17 @@ import './detail.css';
 import Navbar from './navbar';
 
 const DetailInfo = ({ data }) => {
-  const { name, id, pokedex, hp, type, attack, rarity, image, price } = data;
+  const {
+      name,
+      id,
+      pokedex,
+      hp,
+      type,
+      attack,
+      rarity,
+      image,
+      price,
+  } = data;
   return (
     <div key={id}>
       <Navbar name={name} />
@@ -14,10 +24,16 @@ const DetailInfo = ({ data }) => {
             <img src={image} alt="Pokemon" />
             <div>
               <p className="top-name">{name}</p>
-              <p className="top-pokedex">Pokedex Number: {pokedex}</p>
+              <p className="top-pokedex">
+                Pokedex Number:
+                {pokedex}
+              </p>
             </div>
           </div>
-          <p className="middle-bar">Hit Power: {hp}</p>
+          <p className="middle-bar">
+              Hit Power:
+              {hp}
+          </p>
         </section>
         <section className="details-container">
           <div className="d-flex bg-color">
@@ -38,17 +54,27 @@ const DetailInfo = ({ data }) => {
             <p>{rarity}</p>
           </div>
           <div className="price-wrapper bg-color">
-            <p className="title-table">Card Price in USD</p>           
+            <p className="title-table">Card Price in USD</p>
             <div className="d-flex">
               <p>Average</p>
-              <p>$ {price.averageSellPrice}</p>
-            </div><div className="d-flex">
+              <p>
+                $ 
+                {price.averageSellPrice}
+              </p>
+            </div>
+            <div className="d-flex">
               <p>Lowest</p>
-              <p>$ {price.lowPrice}</p>
+              <p>
+                $ 
+                {price.lowPrice}
+              </p>
             </div>
             <div className="d-flex">
               <p>Trend</p>
-              <p>$ {price.trendPrice}</p>
+              <p>
+                $ 
+                {price.trendPrice}
+              </p>
             </div>
           </div>
         </section>
@@ -58,25 +84,34 @@ const DetailInfo = ({ data }) => {
 };
 
 DetailInfo.propTypes = {
-  props: PropTypes.object.isRequired,
+  data: PropTypes.object,
+  name: PropTypes.string,
+  id: PropTypes.string,
+  pokedex: PropTypes.number,
+  hp: PropTypes.string,
+  type: PropTypes.string,
+  attack: PropTypes.array,
+  rarity: PropTypes.string,
+  image: PropTypes.string,
+  price: PropTypes.object,
 };
 
 DetailInfo.defaultProps = {
-  props: { data: {
+  data: {
     id: '7263ds',
     name: 'Pikachu',
     pokedex: 26,
     hp: 300,
     type: 'lightining',
-    attack: [{
+    attack: [ {
       name: 'thunderbold',
-    }],
+    } ],
     rarity: 'common',
     image: './assets/notfound.png',
     price: {
       average: 20,
-    }
-  },},
+    },
+  },
 };
 
 export default DetailInfo;

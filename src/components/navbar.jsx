@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import filterPokemon from '../redux/pokemon/actionsCreator';
@@ -11,10 +12,12 @@ const Navbar = ({ name }) => {
       <Link to="/">
         <p className={`${name ? 'visible' : 'hidden'} back-button`}><strong>&lt;</strong></p>
       </Link>
-      <p>{(name) ? name : 'Filter by Type'}</p>
-      <select className={`${name ? 'hidden' : 'visible'} list-style`}
-        id="pokemonType" onChange={() =>
-        dispatch(filterPokemon(document.getElementById('pokemonType').value))}>
+      <p>{(!name) ? 'Filter by Type' : name}</p>
+      <select
+        className={`${name ? 'hidden' : 'visible'} list-style`}
+        id="pokemonType"
+        onChange={() => dispatch(filterPokemon(document.getElementById('pokemonType').value))}
+       >
         <option value="All">All</option>
         <option value="Colorless">Colorless</option>
         <option value="Darkness">Darkness</option>
@@ -29,6 +32,10 @@ const Navbar = ({ name }) => {
       </select>
     </div>
   );
+};
+
+Navbar.propTypes = {
+  name: PropTypes.string,
 };
 
 export default Navbar;
