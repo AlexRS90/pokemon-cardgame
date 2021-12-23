@@ -39,7 +39,7 @@ Navbar.propTypes = {
 };
 
 Navbar.defaultProps = {
-  name: 'Ampharos'
+  name: 'Ampharos',
 };
 
 export default Navbar;

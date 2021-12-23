@@ -84,16 +84,16 @@ const DetailInfo = ({ data }) => {
 };
 
 DetailInfo.propTypes = {
-  data: PropTypes.object,
+  data: PropTypes.objectOf(PropTypes.object()),
   name: PropTypes.string,
   id: PropTypes.string,
   pokedex: PropTypes.number,
   hp: PropTypes.string,
   type: PropTypes.string,
-  attack: PropTypes.array,
+  attack: PropTypes.arrayOf(PropTypes.array()),
   rarity: PropTypes.string,
   image: PropTypes.string,
-  price: PropTypes.object,
+  price: PropTypes.objectOf(PropTypes.object()),
 };
 
 DetailInfo.defaultProps = {
@@ -101,7 +101,7 @@ DetailInfo.defaultProps = {
     id: '7263ds',
     name: 'Pikachu',
     pokedex: 26,
-    hp: 300,
+    hp: '300',
     type: 'lightining',
     attack: [{
       name: 'thunderbold',
