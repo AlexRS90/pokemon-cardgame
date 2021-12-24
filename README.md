@@ -4,8 +4,8 @@
 
 > Browse through 250 pokemon cards and get info like attacks, number of pokedex, value of the cards and pokemon type.
 
-<img src="https://github.com/AlexRS90/pokemon-cardgame/blob/mobile-app/ssHomePage.jpg" width="300" />
-<img src="https://github.com/AlexRS90/pokemon-cardgame/blob/mobile-app/ssDetailPage.jpg" width="300" />
+<img src="https://github.com/AlexRS90/pokemon-cardgame/blob/development/ssHomePage.jpg" width="300" />
+<img src="https://github.com/AlexRS90/pokemon-cardgame/blob/development/ssDetailPage.jpg" width="300" />
 
 ### Milestone 1:
 - Followed Gitflow
