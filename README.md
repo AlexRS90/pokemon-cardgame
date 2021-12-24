@@ -2,7 +2,7 @@
 
 ## Pokemon Training Card Game
 
-> Browse throw 250 pokemon cards and get info like attacks, number of pokedex, value of the cards and pokemon type.
+> Browse through 250 pokemon cards and get info like attacks, number of pokedex, value of the cards and pokemon type.
 
 <img src="https://github.com/AlexRS90/pokemon-cardgame/blob/mobile-app/ssHomePage.jpg" width="300" />
 <img src="https://github.com/AlexRS90/pokemon-cardgame/blob/mobile-app/ssDetailPage.jpg" width="300" />
