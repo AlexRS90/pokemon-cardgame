@@ -1,0 +1,58 @@
+.top-container {
+  background-color: #507dbc;
+}
+
+.top-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  padding: 1rem 1rem;
+}
+
+.top-name {
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+.top-pokedex {
+  margin: 0;
+}
+
+.middle-bar {
+  margin: 0;
+  padding: 2px 10px;
+  background-color: #35589a;
+}
+
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 1rem;
+}
+
+.attack-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-container {
+  background-color: #6882c6;
+}
+
+.bg-color:nth-child(odd) {
+  background-color: #4464b3;
+}
+
+.title-table {
+  border-bottom: 1px solid #4464b3;
+  padding-bottom: 5px;
+  width: 150px;
+  text-align: center;
+  align-self: center;
+}
