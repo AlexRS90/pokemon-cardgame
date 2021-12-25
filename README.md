@@ -37,7 +37,9 @@
 - Linters
 - Deployed in Heroku
 
-## Live demo
+## Live demo and video description
+
+[Video description](https://www.loom.com/share/ff67691704c04613a5d8d9050b45aaf5)
 
 [PokemonTCG-SPA](https://pokemontcgcapstone.herokuapp.com/)
 
